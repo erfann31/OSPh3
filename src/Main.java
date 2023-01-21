@@ -84,6 +84,7 @@ public class Main {
                     "\nRelative Address: " + p.getRelativeAddress(variableNumber) +
                     "\nLogical Address: Page " + p.getVarPageList().get(variableNumber - 1) + "\t\t\toffset " + p.getVarOffsetList().get(variableNumber - 1) +
                     "\nPhysical Address: Frame " + p.getVarFrameList().get(variableNumber - 1) + "\t\t\tOffset " + p.getVarOffsetList().get(variableNumber - 1) +
+                    "\n0b" + Integer.toBinaryString((p.getVarFrameList().get(variableNumber - 1) * 400 + p.getVarOffsetList().get(variableNumber - 1))) + " = " + (p.getVarFrameList().get(variableNumber - 1) * 400 + p.getVarOffsetList().get(variableNumber - 1)) +
                     "\n------------------------------------------------------------------------");
             History[p.getVarSizeList().indexOf(p.getVarSizeList().get(variableNumber - 1))]++;
             History[p.getVarSizeList().indexOf(p.getVarSizeList().get(variableNumber - 1))]++;
