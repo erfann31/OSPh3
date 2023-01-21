@@ -43,11 +43,11 @@ public class Main {
         }
         for (process p : processes) {
             for (int vSize : p.getVarSizeList()) {
-                int VariableIndex = p.getVarSizeList().indexOf(vSize);
+                int variableIndex = p.getVarSizeList().indexOf(vSize);
                 for (int i = 1; i <= 50; i++) {
-                    if (vSize <= (frameSize - frames.get(i))) {
-                        p.setVarFrame(VariableIndex + 1, i);
-                        p.setVarOffset(VariableIndex + 1, frames.get(i) + 1);
+                    if (vSize <= (frameSize - frames.get(i)) && p.getVarFrameList().get(variableIndex) == -1) {
+                        p.setVarFrame(variableIndex + 1, i);
+                        p.setVarOffset(variableIndex + 1, frames.get(i) + 1);
                         frames.put(i, (frames.get(i) + vSize));
                         break;
                     }
