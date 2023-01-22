@@ -67,11 +67,11 @@ public class Main {
                 for (int ppVariableFrameNumber : pp.getVarFrameList()) {
                     int VariableIndex = pp.getVarFrameList().indexOf(ppVariableFrameNumber);
                     if (ppVariableFrameNumber == p.getVarFrameList().get(variableNumber - 1)) {
-                        pp.setVarPage(VariableIndex + 1, replacePageIndex);
+                        pp.setVarPage(VariableIndex + 1, replacePageIndex+1);
                     }
                 }
             }
-            p.setVarPage(variableNumber, replacePageIndex);
+            p.setVarPage(variableNumber, replacePageIndex+1);
             History[replacePageIndex]++;
             System.out.println("Name: " + p.name +
                     "\nRelative Address: " + p.getRelativeAddress(variableNumber) +
@@ -86,8 +86,7 @@ public class Main {
                     "\nPhysical Address: Frame " + p.getVarFrameList().get(variableNumber - 1) + "\t\t\tOffset " + p.getVarOffsetList().get(variableNumber - 1) +
                     "\n0b" + Integer.toBinaryString((p.getVarFrameList().get(variableNumber - 1) * 400 + p.getVarOffsetList().get(variableNumber - 1))) + " = " + (p.getVarFrameList().get(variableNumber - 1) * 400 + p.getVarOffsetList().get(variableNumber - 1)) +
                     "\n------------------------------------------------------------------------");
-            History[p.getVarSizeList().indexOf(p.getVarSizeList().get(variableNumber - 1))]++;
-            History[p.getVarSizeList().indexOf(p.getVarSizeList().get(variableNumber - 1))]++;
+            History[p.getVarSizeList().indexOf(p.getVarSizeList().get(variableNumber - 1))]+=2;
         }
     }
 
